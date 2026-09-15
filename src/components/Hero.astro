@@ -1,21 +1,21 @@
 ---
 ---
 <section class="hero">
-  <!-- Background image placeholder (using a generic education/children image from Unsplash) -->
+  <!-- The background image provided by the user is a classroom with children -->
   <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop');"></div>
   
-  <div class="container hero-content">
+  <div class="hero-content">
     <div class="hero-text-content">
-      <span class="badge">SUDAN CRISIS APPEAL</span>
+      <span class="badge">EAST AFRICA EMERGENCY APPEAL</span>
       <h1 class="hero-title">Keep children learning</h1>
-      <p class="hero-desc">Help children around the world continue their education in times of crisis. Your donation gives them hope, a safe place to learn, and a brighter future.</p>
+      <p class="hero-desc">Conflicts and climate disasters are forcing millions of children out of school. Your love and generosity can provide emergency classrooms, school supplies, and hope.</p>
       
       <div class="hero-actions">
-        <a href="#" class="btn btn-primary">
-          Donate now 
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+        <a href="#" class="btn btn-primary donate-btn">
+          DONATE NOW 
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </a>
-        <a href="#" class="btn btn-outline">Read more</a>
+        <a href="#" class="btn btn-outline read-btn">READ MORE</a>
       </div>
     </div>
   </div>
@@ -24,11 +24,14 @@
 <style>
   .hero {
     position: relative;
+    max-width: 1440px;
+    height: calc(100vh - 128px); /* 128px = 90px header + 38px utility */
     min-height: 500px;
+    margin: 0 auto;
     display: flex;
-    align-items: center;
-    color: var(--c-white);
-    padding: 4rem 0;
+    align-items: flex-end; /* Text is aligned to the bottom in the screenshot */
+    color: #ffffff;
+    padding: 80px;
   }
 
   .hero-bg {
@@ -39,52 +42,127 @@
     z-index: 1;
   }
 
+  /* Dark overlay to make text readable */
   .hero-bg::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.1) 100%);
+    background: #0C14288C;
   }
 
   .hero-content {
     position: relative;
     z-index: 2;
+    padding: 0;
+    max-width: none;
+    width: 100%;
   }
 
   .hero-text-content {
-    max-width: 600px;
+    max-width: 760px;
+    height: 282px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 1.5rem;
+    justify-content: flex-end;
+    gap: 24px;
   }
 
   .badge {
-    background-color: var(--c-primary);
-    color: var(--c-text);
-    font-size: 0.75rem;
+    background-color: #E2AD45; /* Orange/gold from screenshot */
+    color: #222544;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
     font-weight: 800;
     text-transform: uppercase;
-    padding: 0.25rem 0.75rem;
+    padding: 8px 16px;
     border-radius: 4px;
     letter-spacing: 0.5px;
+    margin-bottom: -8px; /* Slight adjustment to match gap visual */
   }
 
   .hero-title {
-    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 64px; /* Very large text */
+    line-height: 1.1;
     letter-spacing: -1px;
+    margin: 0;
   }
 
   .hero-desc {
-    font-size: 1.125rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
     line-height: 1.6;
+    font-weight: 400;
     opacity: 0.9;
+    margin: 0;
+    max-width: 90%;
   }
 
   .hero-actions {
     display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    margin-top: 0.5rem;
+    gap: 16px;
+    margin-top: 8px;
+  }
+
+  /* Button Overrides for Hero */
+  .donate-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #A2C617; /* Lime green */
+    color: #222544;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 16px 32px;
+    border-radius: 999px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.2s;
+    border: none;
+  }
+
+  .donate-btn:hover {
+    background-color: #92b300;
+    transform: scale(1.02);
+  }
+
+  .read-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 16px 32px;
+    border: 1.5px solid #ffffff;
+    border-radius: 999px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.2s;
+  }
+
+  .read-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .hero {
+      padding: 40px 24px;
+    }
+    .hero-title {
+      font-size: 40px;
+    }
+    .hero-desc {
+      font-size: 16px;
+    }
+    .hero-text-content {
+      height: auto;
+    }
   }
 </style>
