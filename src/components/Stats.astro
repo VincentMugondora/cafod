@@ -1,0 +1,84 @@
+---
+const stats = [
+  {
+    number: "45",
+    title: "COUNTRIES",
+    desc: "Where we work alongside local partners."
+  },
+  {
+    number: "99%",
+    title: "TO DIRECT WORK",
+    desc: "Of resources go directly to our programmes and advocacy."
+  },
+  {
+    number: "1.2m",
+    title: "PEOPLE REACHED",
+    desc: "Supported by our programmes every year."
+  },
+  {
+    number: "60+",
+    title: "YEARS OF SERVICE",
+    desc: "Standing in solidarity with the poorest communities."
+  }
+];
+---
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      {stats.map(stat => (
+        <div class="stat-card">
+          <div class="stat-number">{stat.number}</div>
+          <h3 class="stat-title">{stat.title}</h3>
+          <p class="stat-desc">{stat.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .stats-section {
+    padding: 5rem 0;
+    background-color: var(--c-bg);
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .stat-card {
+    background-color: var(--c-white);
+    padding: 2.5rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stat-number {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--c-primary);
+    line-height: 1;
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
+    /* Since primary is very bright lime yellow, it might need a darker tone for text, but screenshot uses a greenish lime that is readable or they just use the lime color. Let's make it slightly darker lime for contrast */
+    color: #a4c900;
+  }
+
+  .stat-title {
+    font-size: 0.875rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .stat-desc {
+    font-size: 0.875rem;
+    color: var(--c-text-muted);
+    line-height: 1.5;
+  }
+</style>

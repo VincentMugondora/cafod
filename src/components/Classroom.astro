@@ -1,0 +1,82 @@
+---
+---
+<section class="classroom-section">
+  <div class="container">
+    <div class="classroom-layout">
+      <div class="classroom-content">
+        <span class="eyebrow">SCHOOL RESOURCES</span>
+        <h2 class="classroom-title">Bring global justice into the classroom</h2>
+        <p class="classroom-desc">Primary and secondary educational resources to inspire students to learn about Catholic Social Teaching and help build a fairer world.</p>
+        <a href="#" class="btn btn-primary">
+          Explore school resources
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+      </div>
+      <div class="classroom-image-wrap">
+        <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=1170&auto=format&fit=crop" alt="Students in a classroom working together" class="classroom-image" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .classroom-section {
+    padding: 6rem 0;
+    background-color: var(--c-bg);
+  }
+
+  .classroom-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  @media (min-width: 900px) {
+    .classroom-layout {
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+  }
+
+  .classroom-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .eyebrow {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #a4c900;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .classroom-title {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+  }
+
+  .classroom-desc {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--c-text-muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .classroom-image-wrap {
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .classroom-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 4/3;
+  }
+</style>

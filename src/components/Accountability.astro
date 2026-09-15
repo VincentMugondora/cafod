@@ -1,0 +1,116 @@
+---
+const badges = [
+  {
+    title: "Fundraising Regulator",
+    desc: "Registered with the Fundraising Regulator.",
+    icon: `<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>`
+  },
+  {
+    title: "Core Humanitarian Standard",
+    desc: "Certified against the CHS standard.",
+    icon: `<circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path>`
+  },
+  {
+    title: "DEC Member",
+    desc: "Member of the Disasters Emergency Committee.",
+    icon: `<path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" x2="4" y1="22" y2="15"></line>`
+  },
+  {
+    title: "Catholic Charity",
+    desc: "Official aid agency of the Catholic Church in England and Wales.",
+    icon: `<line x1="12" x2="12" y1="2" y2="22"></line><line x1="7" x2="17" y1="7" y2="7"></line>`
+  }
+];
+---
+<section class="accountability-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">OUR COMMITMENT</span>
+      <h2 class="section-title">Your generosity, managed with maximum accountability</h2>
+    </div>
+
+    <div class="badges-grid">
+      {badges.map(badge => (
+        <div class="badge-card">
+          <div class="badge-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={badge.icon}></svg>
+          </div>
+          <div class="badge-content">
+            <h3 class="badge-title">{badge.title}</h3>
+            <p class="badge-desc">{badge.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .accountability-section {
+    padding: 5rem 0;
+    background-color: var(--c-white);
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+    max-width: 600px;
+    margin-inline: auto;
+  }
+
+  .eyebrow {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #a4c900;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+  }
+
+  .badges-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .badge-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.5rem;
+    background-color: var(--c-bg);
+    border-radius: 8px;
+    border: 1px solid #eee;
+  }
+
+  .badge-icon {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    background-color: #f2f759;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--c-navy);
+  }
+
+  .badge-title {
+    font-size: 0.875rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+  }
+
+  .badge-desc {
+    font-size: 0.75rem;
+    color: var(--c-text-muted);
+    line-height: 1.5;
+  }
+</style>

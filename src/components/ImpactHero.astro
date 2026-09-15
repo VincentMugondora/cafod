@@ -1,0 +1,83 @@
+---
+---
+<section class="impact-hero">
+  <!-- Background image placeholder (using a generic community/partnership image from Unsplash) -->
+  <div class="impact-bg" style="background-image: url('https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1974&auto=format&fit=crop');"></div>
+  
+  <div class="container impact-content">
+    <div class="impact-text-content">
+      <span class="eyebrow">MEET LOCAL PEOPLE</span>
+      <h2 class="impact-title">Lasting change starts with local partnership</h2>
+      <p class="impact-desc">We don't drop in and out. We work alongside local experts and communities to help them build a better future. When you give to CAFOD, you're investing in a partnership that transforms lives.</p>
+      
+      <div class="impact-actions">
+        <a href="#" class="btn btn-primary">
+          See our impact 
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .impact-hero {
+    position: relative;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    color: var(--c-white);
+    padding: 5rem 0;
+  }
+
+  .impact-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+  }
+
+  .impact-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(19, 25, 43, 0.9) 0%, rgba(19, 25, 43, 0.7) 50%, rgba(19, 25, 43, 0.2) 100%);
+  }
+
+  .impact-content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .impact-text-content {
+    max-width: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .eyebrow {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--c-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .impact-title {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    letter-spacing: -0.5px;
+  }
+
+  .impact-desc {
+    font-size: 1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+  }
+
+  .impact-actions {
+    margin-top: 1rem;
+  }
+</style>

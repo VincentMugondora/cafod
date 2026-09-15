@@ -1,0 +1,198 @@
+---
+const stories = [
+  {
+    image: "https://images.unsplash.com/photo-1595834887375-8120ec2c3f86?q=80&w=800&auto=format&fit=crop",
+    tag: "AGRICULTURE",
+    title: "Resilient farming in East Africa",
+    desc: "Discover how new drought-resistant crops are helping farmers in Kenya secure their harvests against a changing climate.",
+    linkText: "Read story"
+  },
+  {
+    image: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?q=80&w=800&auto=format&fit=crop",
+    tag: "EMERGENCY UPDATE",
+    title: "Urgent care in emergency zones",
+    desc: "Thanks to your support, our local partners are delivering food, shelter, and medical assistance to families in crisis zones.",
+    linkText: "Read story"
+  },
+  {
+    image: "https://images.unsplash.com/photo-1601509172445-56345ebfc00b?q=80&w=800&auto=format&fit=crop",
+    tag: "WOMEN'S EMPOWERMENT",
+    title: "Cooperative savings lead to new paths",
+    desc: "Local women in rural regions are banding together to form savings groups, starting businesses, and transforming their communities.",
+    linkText: "Read story"
+  }
+];
+---
+<section class="stories-section">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <span class="eyebrow">NEWS AND STORIES</span>
+        <h2 class="section-title">Hope in action</h2>
+      </div>
+      <a href="#" class="view-all-link">
+        See all stories 
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+    </div>
+
+    <div class="stories-grid">
+      {stories.map(story => (
+        <article class="story-card">
+          <div class="story-image">
+            <img src={story.image} alt={story.title} loading="lazy" />
+          </div>
+          <div class="story-content">
+            <div class="story-tag">
+              <span class="tag-dot"></span>
+              {story.tag}
+            </div>
+            <h3 class="story-title">{story.title}</h3>
+            <p class="story-desc">{story.desc}</p>
+            <a href="#" class="card-link">
+              {story.linkText}
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .stories-section {
+    padding: 5rem 0;
+    background-color: var(--c-bg);
+  }
+
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3rem;
+  }
+
+  .eyebrow {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #a4c900;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    letter-spacing: -0.5px;
+  }
+
+  .view-all-link {
+    font-size: 0.875rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.2s;
+  }
+  
+  .view-all-link:hover {
+    color: var(--c-red);
+  }
+
+  .stories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .story-card {
+    background-color: var(--c-white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .story-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+  }
+
+  .story-image {
+    width: 100%;
+    height: 200px;
+  }
+
+  .story-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .story-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .story-tag {
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--c-text-muted);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .tag-dot {
+    width: 6px;
+    height: 6px;
+    background-color: var(--c-primary);
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .story-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+  }
+
+  .story-desc {
+    font-size: 0.875rem;
+    color: var(--c-text-muted);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+  }
+
+  .card-link {
+    font-size: 0.875rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .card-link:hover {
+    color: var(--c-red);
+  }
+
+  @media (max-width: 768px) {
+    .section-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+  }
+</style>

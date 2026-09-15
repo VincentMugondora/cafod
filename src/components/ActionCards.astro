@@ -1,0 +1,155 @@
+---
+const actions = [
+  {
+    title: "Donate",
+    description: "Your donation means we can stand alongside our sisters and brothers in need.",
+    linkText: "Support our work",
+    iconBg: "var(--c-icon-yellow)",
+    icon: `<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>` // Heart
+  },
+  {
+    title: "Fundraise",
+    description: "Run, bake, walk or cycle. Have fun and raise money to fight poverty.",
+    linkText: "Start fundraising",
+    iconBg: "var(--c-icon-orange)",
+    icon: `<path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>` // Pound/Money (using generic currency/pound-like)
+  },
+  {
+    title: "Campaign",
+    description: "Speak up for those whose voices are ignored and demand change.",
+    linkText: "Support our campaigns",
+    iconBg: "var(--c-icon-blue)",
+    icon: `<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>` // Message/Megaphone approximation
+  },
+  {
+    title: "Volunteer",
+    description: "Share your time and skills to help make the world a better place.",
+    linkText: "Explore volunteering",
+    iconBg: "var(--c-icon-green)",
+    icon: `<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path>` // Users
+  },
+  {
+    title: "Pray",
+    description: "Join us in prayer for our sisters and brothers living in poverty.",
+    linkText: "Explore prayers",
+    iconBg: "var(--c-icon-pink)",
+    icon: `<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>` // Shield/Pray
+  }
+];
+---
+<section class="action-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">TOGETHER, WE CAN MAKE A DIFFERENCE</span>
+      <h2 class="section-title">A better world needs all of us</h2>
+    </div>
+
+    <div class="cards-grid">
+      {actions.map(action => (
+        <div class="action-card">
+          <div class="icon-wrapper" style={`background-color: ${action.iconBg}`}>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={action.icon}></svg>
+          </div>
+          <h3 class="card-title">{action.title}</h3>
+          <p class="card-desc">{action.description}</p>
+          <a href="#" class="card-link">
+            {action.linkText}
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .action-section {
+    padding: 5rem 0;
+    background-color: var(--c-bg);
+  }
+
+  .section-header {
+    margin-bottom: 3rem;
+  }
+
+  .eyebrow {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--c-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background-color: var(--c-navy);
+    padding: 0.25rem 0.75rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+    /* Looking at the screenshot, the eyebrow is yellow text on nothing, or maybe just yellow text. Wait, "TOGETHER WE CAN..." is lime green/yellow text on the white background. It's actually a yellow badge but maybe transparent? Let me use green text. */
+    color: #a4c900;
+    background-color: transparent;
+    padding: 0;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    letter-spacing: -0.5px;
+  }
+
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .action-card {
+    background-color: var(--c-white);
+    padding: 2rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .action-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+  }
+
+  .icon-wrapper {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    color: var(--c-navy);
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .card-desc {
+    font-size: 0.875rem;
+    color: var(--c-text-muted);
+    margin-bottom: 2rem;
+    flex-grow: 1;
+    line-height: 1.6;
+  }
+
+  .card-link {
+    font-size: 0.875rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .card-link:hover {
+    color: var(--c-red);
+  }
+</style>

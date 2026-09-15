@@ -1,0 +1,124 @@
+---
+---
+<section class="newsletter-section">
+  <div class="container">
+    <div class="newsletter-card">
+      <div class="newsletter-content">
+        <h2 class="newsletter-title">Hope, delivered to your inbox</h2>
+        <p class="newsletter-desc">Sign up to receive our emails and keep up to date with the latest news on our work, campaigns and fundraising.</p>
+      </div>
+      <div class="newsletter-form-wrap">
+        <form class="newsletter-form" action="#" method="POST" onsubmit="event.preventDefault();">
+          <input type="email" placeholder="Enter your email address" required class="newsletter-input" />
+          <button type="submit" class="btn btn-primary newsletter-btn">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .newsletter-section {
+    padding: 0 0 5rem 0; /* Background is white, but the card is dark navy */
+    background-color: var(--c-white);
+  }
+
+  .newsletter-card {
+    background-color: var(--c-navy-light);
+    color: var(--c-white);
+    border-radius: 16px;
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+
+  @media (min-width: 768px) {
+    .newsletter-card {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 4rem;
+      gap: 4rem;
+    }
+  }
+
+  .newsletter-content {
+    flex: 1;
+    max-width: 500px;
+  }
+
+  .newsletter-title {
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    letter-spacing: -0.5px;
+    margin-bottom: 0.75rem;
+  }
+
+  .newsletter-desc {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    opacity: 0.8;
+  }
+
+  .newsletter-form-wrap {
+    flex: 1;
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  @media (min-width: 480px) {
+    .newsletter-form {
+      flex-direction: row;
+      background-color: rgba(0,0,0,0.2);
+      border-radius: 9999px;
+      padding: 0.375rem;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+  }
+
+  .newsletter-input {
+    flex-grow: 1;
+    background: rgba(0,0,0,0.2);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 9999px;
+    padding: 0.875rem 1.5rem;
+    color: var(--c-white);
+    font-size: 0.875rem;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  @media (min-width: 480px) {
+    .newsletter-input {
+      background: transparent;
+      border: none;
+    }
+  }
+
+  .newsletter-input::placeholder {
+    color: rgba(255,255,255,0.5);
+  }
+
+  .newsletter-input:focus {
+    border-color: rgba(255,255,255,0.3);
+  }
+
+  @media (min-width: 480px) {
+    .newsletter-input:focus {
+      border-color: transparent;
+    }
+  }
+
+  .newsletter-btn {
+    border-radius: 9999px;
+    white-space: nowrap;
+    padding: 0.875rem 2rem;
+  }
+</style>
