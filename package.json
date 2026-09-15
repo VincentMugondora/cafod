@@ -12,6 +12,8 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/compiler-binding-wasm32-wasi": "^0.4.0",
+    "@bruits/satteri-wasm32-wasi": "^0.10.5",
     "astro": "^7.3.2"
   },
   "allowScripts": {
